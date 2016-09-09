@@ -22849,7 +22849,7 @@
 	 *
 	 *   const routes = createRoutesFromReactChildren(
 	 *     <Route component={App}>
-	 *       <Route path="home" component={Dashboard}/>
+	 *       <Route path="home" component={PostList}/>
 	 *       <Route path="news" component={NewsFeed}/>
 	 *     </Route>
 	 *   )

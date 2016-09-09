@@ -3,6 +3,7 @@ import NavigationBar from './NavigationBar'
 import AppMenu from './AppMenu'
 import {Unsubscribe} from "redux";
 import {globalStore} from "../reducers/index";
+import {BlogLoader} from "../services/BlogLoader";
 
 /**
  * the app container
@@ -23,6 +24,11 @@ export default class App extends React.Component<{}, {collapsed: Boolean}> {
   unsubscribe: Unsubscribe;
 
   /**
+   * the blog loader
+   */
+  blogLoader: BlogLoader;
+
+  /**
    * the component did mount
    */
   componentDidMount() {
@@ -31,7 +37,10 @@ export default class App extends React.Component<{}, {collapsed: Boolean}> {
        () => this.setState({
          collapsed: globalStore.state.sidebar
        })
-    )
+    );
+
+    this.blogLoader = new BlogLoader();
+    this.blogLoader.load();
   }
 
   /**

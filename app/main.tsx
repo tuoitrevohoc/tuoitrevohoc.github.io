@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './components/App';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/PostList';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 ReactDOM.render(
