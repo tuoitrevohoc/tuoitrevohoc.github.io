@@ -5,6 +5,7 @@ import * as React from 'react';
 import {BlogState, blogStore} from "../reducers/blog";
 
 declare function marked(text: string): string;
+declare var FB: any;
 
 /**
  * the dash board
@@ -27,6 +28,11 @@ class PostList extends React.Component<{}, BlogState> {
     });
   }
 
+  componentDidUpdate() {
+    //noinspection TypeScriptUnresolvedVariable
+    FB.XFBML.parse();
+  }
+
   /**
    * unsubscribe
    */
@@ -43,8 +49,15 @@ class PostList extends React.Component<{}, BlogState> {
         {this.state.posts.map(post => {
           return (
             <div key={post.name} className="ui blurring content-box">
-              <div
+              <div className="post"
                   dangerouslySetInnerHTML={{ __html: marked(post.content)}}>
+              </div>
+              <div className="comments">
+                <div className="fb-comments"
+                     data-href={"https://tuoitrevohoc.github.io"}
+                     data-numposts={5}>
+                  Comments
+                </div>
               </div>
             </div>
           )

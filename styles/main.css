@@ -56,10 +56,24 @@ h1, h2, h3, h4, h5 {
   display: block;
   position: relative;
   margin: 20px 20px 0 20px;
-  padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
   transition-duration: 0.25s;
+}
+
+.content-box .post {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.content-box .comments {
+  background-color: #f6f7f9;
+  padding: 20px;
+}
+
+.fb-comments {
+  margin: 0 auto;
+  width: 550px;
 }
 
 .content-box .active.dimmer {
