@@ -22762,6 +22762,10 @@
 	            _this.setState(blog_1.blogStore.state);
 	        });
 	    };
+	    PostList.prototype.componentDidUpdate = function () {
+	        //noinspection TypeScriptUnresolvedVariable
+	        FB.XFBML.parse();
+	    };
 	    /**
 	     * unsubscribe
 	     */
@@ -22770,7 +22774,7 @@
 	    };
 	    PostList.prototype.render = function () {
 	        return (React.createElement("div", null, React.createElement("div", {className: "heading"}, React.createElement("h4", null, "My Blogs")), this.state.posts.map(function (post) {
-	            return (React.createElement("div", {key: post.name, className: "ui blurring content-box"}, React.createElement("div", {dangerouslySetInnerHTML: { __html: marked(post.content) }})));
+	            return (React.createElement("div", {key: post.name, className: "ui blurring content-box"}, React.createElement("div", {className: "post", dangerouslySetInnerHTML: { __html: marked(post.content) }}), React.createElement("div", {className: "comments"}, React.createElement("div", {className: "fb-comments", "data-href": "https://tuoitrevohoc.github.io", "data-numposts": 5}, "Comments"))));
 	        })));
 	    };
 	    return PostList;
